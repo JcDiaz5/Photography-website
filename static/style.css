@@ -12,7 +12,11 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    background-color: rgb(254, 250, 242);
+    background-image: url('/static/img/Background.png'); /* Replace 'background-image.jpg' with the path to your image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent background image from repeating */
+    background-attachment: fixed; /* Keep the background fixed when scrolling */
     gap: 50px;
 }
 
@@ -116,7 +120,7 @@ section {
 .dropdown:hover .dropdown-content {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(255, 254, 248);
+    background-color: rgb(253, 253, 250);
     padding: 20px;
     width: 100px;
     box-shadow: 2px 2px 3px 2px rgb(233, 233, 233);
@@ -140,9 +144,10 @@ section {
     margin: 0px auto;
     width: 150px;
     padding: 5px;
-    background: transparent;
+    background: rgb(254, 250, 245);
     border: none;
     box-shadow: 2px 2px 3px 2px rgb(227, 227, 227);
+    border-radius: 10px;
 }
 
 .bottom-nav {
