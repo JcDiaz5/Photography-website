@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="canvas">
+        <div class="main-container">
+            <header>
+                <nav>
+                    <ul>
+                        <li><a href="#" id="about-link">Acerca de mi</a></li>
+                        <li><a href="mailto:katia_ejemplo@mail.com">Contacto</a></li>
+                    </ul>
+                    <div class="dropdown-container">
+                        <div class="dropdown">
+                            <button class="dropdown-button">Kat Fotografía</button>
+                            <div class="dropdown-content">
+                                <a href="#" onclick="scrollToCategory('photo-container-Family')">Familia</a>
+                                <a href="#" onclick="scrollToCategory('photo-container-Wedding')">Boda</a>
+                                <a href="#" onclick="scrollToCategory('photo-container-Pregnancy')">Embarazo</a>
+                                <a href="#" onclick="scrollToCategory('photo-container-Partner')">Pareja</a>
+                                <a href="#" onclick="scrollToCategory('photo-container-People')">Personas</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div id="about-content" class="about-content">
+                <p>
+                    Hola, mi nombre es <span class="about-name">Katia Fernandez!</span>  Soy una fotógrafa profesional con 8 años de experiencia 
+                    en sesiones fotográficas de bodas, parejas, familiares, embarazos, y más. Me gusta capturar 
+                    la esencia de las personas y ser parte de momentos felices que recordarán por mucho tiempo. 
+                    Me gusta leer novelas de misterio en mis tiempos libres y pasarla con mis seres queridos.
+                </p>
+            </div>  
+            <section>
+                <div class="horizontal-scroll-container" id="photo-container-Family">
+                    <!-- Photos from Family will be dynamically inserted here -->
+                </div>
+            </section>
+            <section>
+                <div class="horizontal-scroll-container" id="photo-container-Wedding">
+                    <!-- Photos from Wedding will be dynamically inserted here -->
+                </div>
+            </section>
+            <section>
+                <div class="horizontal-scroll-container" id="photo-container-Pregnancy">
+                    <!-- Photos from Pregnancy will be dynamically inserted here -->
+                </div>
+            </section>
+            <section>
+                <div class="horizontal-scroll-container" id="photo-container-Partner">
+                    <!-- Photos from Partner will be dynamically inserted here -->
+                </div>
+            </section>
+            <section>
+                <div class="horizontal-scroll-container" id="photo-container-People">
+                    <!-- Photos from People will be dynamically inserted here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <script>
+        const aboutLink = document.getElementById('about-link');
+        const aboutContent = document.getElementById('about-content');
+        const firstPhotoSection = document.querySelector('section');
+
+        aboutLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            aboutContent.classList.toggle('visible'); // Toggle 'visible' class to show/hide the section
+        });
+
+
+        // Function to fetch and display images for a specific folder
+        function fetchAndDisplayImages(folderName, containerId) {
+            const photoContainer = document.getElementById(containerId);
+
+            fetch(`https://www.googleapis.com/storage/v1/b/photography-portfolio-jc/o?prefix=Photography_portfolio/${folderName}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.items) {
+                    // Process data and extract photo URLs
+                    const photoUrls = data.items.map(item => item.mediaLink);
+
+                    // Insert photos into HTML
+                    photoUrls.forEach(photoUrl => {
+                        const img = document.createElement('img');
+                        img.src = photoUrl;
+                        photoContainer.appendChild(img);
+                    });
+                } else {
+                    console.warn(`No items found in the response for ${folderName}`);
+                }
+            })
+            .catch(error => {
+                console.error(`Error fetching photos for ${folderName}:`, error);
+            });
+        }
+
+        // Fetch and display images for each section
+        fetchAndDisplayImages('Family/', 'photo-container-Family');
+        fetchAndDisplayImages('Wedding/', 'photo-container-Wedding');
+        fetchAndDisplayImages('Pregnancy/', 'photo-container-Pregnancy');
+        fetchAndDisplayImages('Partner/', 'photo-container-Partner');
+        fetchAndDisplayImages('People/', 'photo-container-People');
+
+        // Function to handle mouse enter event
+        function handleMouseEnter(event) {
+            event.target.style.opacity = 1; // Fully visible when cursor enters
+        }
+
+        // Function to handle mouse leave event
+        function handleMouseLeave(event) {
+            event.target.style.opacity = 0.7; // Slightly faded when cursor leaves
+        }
+
+        // Get all section elements
+        const sections = document.querySelectorAll('section');
+
+        // Loop through each section and add event listeners
+        sections.forEach(section => {
+            section.style.opacity = 0.7; // Set default opacity to 0.8
+            section.addEventListener('mouseenter', handleMouseEnter);
+            section.addEventListener('mouseleave', handleMouseLeave);
+        });
+
+        // Function to smoothly scroll to the selected category
+        function scrollToCategory(categoryId) {
+            const categoryElement = document.getElementById(categoryId);
+            categoryElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+
+
+</body>
+</html>
