@@ -12,7 +12,7 @@
 .main-container {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 252, 247);
+    background-color: rgb(254, 250, 242);
     gap: 50px;
 }
 
@@ -28,12 +28,14 @@
     text-decoration: none;
     font-size: 23px;
     color:rgb(88, 88, 88);
+}
+
+.main-container li {
     transition: transform 0.3s ease; /* Smoothing tansition effect */
 }
 
-.main-container a:hover {
-    color:rgb(107, 107, 107);
-    transform: scale(1.5); /* Scales the button when hovered over */
+.main-container li:hover {
+    transform: scale(1.08); /* Scales the button when hovered over */
 }
 
 .visible {
@@ -53,6 +55,11 @@
 .about-content.visible {
     max-height: 200px; /* Adjust the maximum height as needed */
     opacity: 1;
+}
+
+.about-name {
+    color:rgb(122, 97, 118);
+    font-size: 22px;
 }
 
 .horizontal-scroll-container img {
@@ -108,11 +115,10 @@ section {
 
 .dropdown:hover .dropdown-content {
     display: flex;
-    justify-content: space-evenly;
-    background-color: white;
+    justify-content: space-between;
+    background-color: rgb(255, 254, 248);
     padding: 20px;
     width: 100px;
-    gap: 20px;
     box-shadow: 2px 2px 3px 2px rgb(233, 233, 233);
     border-radius: 20px;
     border: none;
@@ -121,7 +127,7 @@ section {
 /* Style the dropdown button */
 .dropdown-button {
     background-color: transparent;
-    color: rgb(66, 66, 66);
+    color: rgb(122, 97, 118);
     margin-top: 5px;
     font-size: 30px;
     border: none;
@@ -129,3 +135,13 @@ section {
     border-radius: 20px;
 }
 
+.bottom-nav {
+    background-color: rgb(39, 36, 32);
+    height: 100px;
+}
+
+.bottom-link-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
