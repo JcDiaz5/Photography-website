@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="static/style2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="main-container">
+        <div class="sidebar">
+            <header>
+                <h2>Katia Fernandez</h2>
+            </header>
+            <ul>
+                <li><h4>Acerca de mi</h4></li>
+                <li class="dropdown">
+                    <h4 id="dropdown-btn">Contacto</h4>
+                    <ul id="contacto-menu" class="dropdown-content">
+                        <li><a href="mailto:katiaphoto@mail.com">E: katiaphoto@mail.com</a></li>
+                        <li><p>T: 664-123-4567</p></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <button class="dropdown-btn">Albums</button>
+                    <ul id="albums-menu" class="dropdown-content">
+                        <li><a href="#">Bodas</a></li>
+                        <li><a href="#">Familia</a></li>
+                        <li><a href="#">Pareja</a></li>
+                        <li><a href="#">Embarazos</a></li>
+                        <li><a href="#">Urbano</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="content-container">
+            <div class="slideshow-container">
+                <div class="slides">
+                    <img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/People/pexels-haste-leart-v-690597.jpg" alt="Urban1">
+                    <img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-pixabay-157757.jpg" alt="Wedding1">
+                    <img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-emma-bauso-2253870.jpg" alt="Wedding2">
+                    <img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-vidal-balielo-jr-1682497.jpg" alt="Family1">
+                    <img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-harrison-haines-3204088.jpg" alt="Partner1">
+                    <!-- Add more images as needed -->
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+            <div class="album-section">
+                <div class="album-container">
+                
+                </div>
+            </div>
+        
+        </div>
+    </div>
+    <script src="static/script.js"></script>
+</body>
+</html>
