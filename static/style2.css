@@ -11,10 +11,7 @@
     display: flex;
 }
 
-.content-container {
-    flex: 1;
-    padding: 20px;
-}
+
 
 /* SIDEBAR .................................................... */
 .sidebar {
@@ -117,6 +114,8 @@ header {
 /* CONTENT ......................................... */
 
 .content-container {
+    flex: 1;
+    padding: 0px 20px 20px;
     margin-left: 250px;
     background-color: #f6f6f6;
     box-shadow: 1px 1px 2px 2px rgb(230, 229, 229);
@@ -130,6 +129,7 @@ header {
     max-width: 100%;
     height: 350px;
     overflow: hidden;
+    border-bottom: 1px solid rgb(232, 232, 232);
 }
 
 .slides {
@@ -138,17 +138,21 @@ header {
     max-width: 500px;
     display: flex;
     justify-content: center;
+    align-items: center;
+
 }
 
 .slides img {
     width: auto;
-    height: 100%;
+    height: 90%;
     max-width: 100%;
     max-height: 100%;
     opacity: 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 10px rgb(203, 203, 203);
     transition: opacity 1s ease;
 }
-
 .prev, .next {
     position: absolute;
     top: 50%;
@@ -156,7 +160,7 @@ header {
     cursor: pointer;
     padding: 16px;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.148);
     border-radius: 50%;
 }
 
@@ -170,13 +174,42 @@ header {
 
 /* ALBUMS .......................................... */
 .album-section {
-    display: inline-block;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .album-container {
-width: 300px;
-height: 400px;
+width: 250px;
+height: 350px;
 margin: 70px 20px;
-box-shadow: 0px 2px 5px 3px rgb(192, 192, 192);
+box-shadow: 0px 2px 5px 3px rgb(213, 213, 213);
 border-radius: 20px;
+padding: 30px;
+}
+
+.album-cover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.album-cover a{
+    text-decoration: none;
+    font-size: 25px;
+
+}
+.album-cover img {
+    width: 100%;
+    height: auto;
+    max-height: 310px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 4px rgb(230, 230, 230);
+    filter: saturate(20%);
+    transition: filter .5s ease;
+}
+
+.album-cover img:hover {
+    filter: saturate(100%);
 }
