@@ -27,11 +27,11 @@
                 <li class="dropdown">
                     <button class="dropdown-btn">Albums</button>
                     <ul id="albums-menu" class="dropdown-content">
-                        <li><a href="#">Bodas</a></li>
-                        <li><a href="#">Familia</a></li>
-                        <li><a href="#">Pareja</a></li>
-                        <li><a href="#">Embarazos</a></li>
-                        <li><a href="#">Urbano</a></li>
+                        <li><a href="#"onclick="toggleDescription(event, 'album1'), scrollToDescription('description')">Urbano</a></li>
+                        <li><a href="#"onclick="toggleDescription(event, 'album2'), scrollToDescription('description')">Bodas</a></li>
+                        <li><a href="#"onclick="toggleDescription(event, 'album3'), scrollToDescription('description')">Familia</a></li>
+                        <li><a href="#"onclick="toggleDescription(event, 'album4'), scrollToDescription('description')">Parejas</a></li>
+                        <li><a href="#"onclick="toggleDescription(event, 'album5'), scrollToDescription('description')">Embarazos</a></li>
                     </ul>
                 </li>
             </ul>
@@ -53,31 +53,31 @@
             <div class="album-section">
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#" onclick="toggleDescription('album1')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/People/pexels-rob-gamble-2859371.jpg" alt="Urbano_photo"></a>
+                        <a href="#" onclick="toggleDescription(event, 'album1'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/People/pexels-rob-gamble-2859371.jpg" alt="Urbano_photo"></a>
                         <a href=""><h4>Urbano</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#" onclick="toggleDescription('album2')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-pixabay-157757.jpg" alt="Wedding_photo"></a>
+                        <a href="#" onclick="toggleDescription(event, 'album2'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-pixabay-157757.jpg" alt="Wedding_photo"></a>
                         <a href=""><h4>Bodas</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#" onclick="toggleDescription('album3')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-harrison-haines-3204088.jpg" alt="Family_photo"></a>
+                        <a href="#" onclick="toggleDescription(event, 'album3'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-harrison-haines-3204088.jpg" alt="Family_photo"></a>
                         <a href=""><h4>Familiar</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#" onclick="toggleDescription('album4')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Partner/pexels-jonathan-borba-10258520.jpg" alt="Pareja_photo"></a>
+                        <a href="#" onclick="toggleDescription(event, 'album4'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Partner/pexels-jonathan-borba-10258520.jpg" alt="Pareja_photo"></a>
                         <a href=""><h4>Pareja</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#" onclick="toggleDescription('album5')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Pregnancy/pexels-bruno-abdiel-19738359.jpg" alt="Embarazo_photo"></a>
+                        <a href="#" onclick="toggleDescription(event, 'album5'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Pregnancy/pexels-bruno-abdiel-19738359.jpg" alt="Embarazo_photo"></a>
                         <a href=""><h4>Embarazo</h4></a>
                     </div>
                 </div>
@@ -85,10 +85,51 @@
         </div>
     </div>
     <script src="static/script.js"></script>
-    <div id="description_album1" class="description">Description for Album 1</div>
-    <div id="description_album2" class="description">Description for Album 2</div>
-    <div id="description_album3" class="description">Description for Album 3</div>
-    <div id="description_album4" class="description">Description for Album 4</div>
-    <div id="description_album5" class="description">Description for Album 5</div>
+    <div id="description_album1" class="description">
+        <h2>Urbano</h2>
+        <p>
+        Descubre la energía vibrante y el encanto ecléctico de la vida urbana con nuestras sesiones de 
+        fotografía urbana. Ya sea frente a las calles de la ciudad, murales coloridos o maravillas 
+        arquitectónicas, buscamos capturar el espíritu dinámico y el carácter único de los entornos urbanos. 
+        Nuestro objetivo es crear imágenes visualmente impactantes que celebren la diversidad, la creatividad 
+        y el ritmo de la vida en la ciudad.
+        </p>
+    </div>
+    <div id="description_album2" class="description">
+        <h2>Bodas</h2>
+        <p>
+        Captura la elegancia atemporal y los momentos emotivos de tu día especial con nuestros servicios de 
+        fotografía de bodas. Desde el tierno intercambio de votos hasta la alegre celebración con seres 
+        queridos, documentamos artísticamente cada detalle, asegurando que tu historia de amor quede bellamente 
+        preservada para las generaciones venideras.
+        </p>
+    </div>
+    <div id="description_album3" class="description">
+        <h2>Familiar</h2>
+        <p>
+        Aprecia el amor y la risa de tu familia con nuestras sesiones de fotografía familiar. Creemos en 
+        capturar los lazos genuinos y los momentos felices compartidos entre los miembros de la familia, desde 
+        abrazos juguetones hasta risas espontáneas. Nuestro objetivo es crear imágenes atemporales que evocan 
+        calidez, felicidad y el inconfundible sentido de pertenencia que proviene de estar juntos.
+        </p>
+    </div>
+    <div id="description_album4" class="description">
+        <h2>Parejas</h2>
+        <p>
+        Celebra tu vínculo único y conexión con nuestras sesiones de fotografía de parejas. Ya sea que estén 
+        marcando un aniversario importante o simplemente quieran capturar la magia de su relación, nuestro 
+        objetivo es crear imágenes impresionantes que reflejen auténticamente su historia de amor, mostrando 
+        la risa, la ternura y las aventuras compartidas que hacen que su relación sea realmente especial.
+        </p>
+    </div>
+    <div id="description_album5" class="description">
+        <h2>Embarazos</h2>
+        <p>
+        Abraza la belleza y la maravilla de la maternidad con nuestras sesiones de fotografía de embarazo. 
+        Desde retratos de maternidad radiantes hasta momentos íntimos compartidos entre futuros padres, 
+        buscamos capturar la emoción, la anticipación y el amor incondicional que acompañan este viaje 
+        transformador. Permítenos preservar los preciosos recuerdos de este momento tan especial en tu vida.
+        </p>
+    </div>
 </body>
 </html>

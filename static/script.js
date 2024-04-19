@@ -31,7 +31,8 @@ startSlideshow(); // Start the slideshow
 
 
 // Function to toggle the visibility of the description div for each item
-function toggleDescription(album) {
+function toggleDescription(event, album) {
+    event.preventDefault();
     // Get the description div
     var description = document.getElementById("description");
     // Hide any previously shown descriptions
@@ -45,4 +46,14 @@ function toggleDescription(album) {
         description.innerHTML = albumDescription.innerHTML;
         description.style.display = "block";
     }
+}
+
+/* Smooth transition to top of page */
+function scrollToDescription(sectionId) {
+    const section = document.getElementById(sectionId);
+    const sectionPosition = section.offsetTop;
+    window.scrollTo({
+        top: sectionPosition,
+        behavior: 'smooth' // Smooth scrolling behavior
+    });
 }
