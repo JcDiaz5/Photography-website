@@ -49,41 +49,46 @@
                 <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
                 <a class="next" onclick="changeSlide(1)">&#10095;</a>
             </div>
+            <div id="description" class="description"></div>
             <div class="album-section">
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/People/pexels-rob-gamble-2859371.jpg" alt="Urbano_photo"></a>
+                        <a href="#" onclick="toggleDescription('album1')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/People/pexels-rob-gamble-2859371.jpg" alt="Urbano_photo"></a>
                         <a href=""><h4>Urbano</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-pixabay-157757.jpg" alt="Wedding_photo"></a>
+                        <a href="#" onclick="toggleDescription('album2')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-pixabay-157757.jpg" alt="Wedding_photo"></a>
                         <a href=""><h4>Bodas</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-harrison-haines-3204088.jpg" alt="Family_photo"></a>
+                        <a href="#" onclick="toggleDescription('album3')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-harrison-haines-3204088.jpg" alt="Family_photo"></a>
                         <a href=""><h4>Familiar</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Partner/pexels-jonathan-borba-10258520.jpg" alt="Pareja_photo"></a>
+                        <a href="#" onclick="toggleDescription('album4')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Partner/pexels-jonathan-borba-10258520.jpg" alt="Pareja_photo"></a>
                         <a href=""><h4>Pareja</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
-                        <a href="#"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Pregnancy/pexels-bruno-abdiel-19738359.jpg" alt="Embarazo_photo"></a>
+                        <a href="#" onclick="toggleDescription('album5')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Pregnancy/pexels-bruno-abdiel-19738359.jpg" alt="Embarazo_photo"></a>
                         <a href=""><h4>Embarazo</h4></a>
                     </div>
                 </div>
             </div>
-        
         </div>
     </div>
     <script src="static/script.js"></script>
+    <div id="description_album1" class="description">Description for Album 1</div>
+    <div id="description_album2" class="description">Description for Album 2</div>
+    <div id="description_album3" class="description">Description for Album 3</div>
+    <div id="description_album4" class="description">Description for Album 4</div>
+    <div id="description_album5" class="description">Description for Album 5</div>
 </body>
 </html>

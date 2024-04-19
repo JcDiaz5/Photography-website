@@ -28,3 +28,21 @@ function startSlideshow() {
 
 showSlide(); // Show the initial slide
 startSlideshow(); // Start the slideshow
+
+
+// Function to toggle the visibility of the description div for each item
+function toggleDescription(album) {
+    // Get the description div
+    var description = document.getElementById("description");
+    // Hide any previously shown descriptions
+    var previousDescription = document.querySelector('.description[style="display: block;"]');
+    if (previousDescription) {
+        previousDescription.style.display = "none";
+    }
+    // Show the description for the clicked album
+    var albumDescription = document.getElementById("description_" + album);
+    if (albumDescription) {
+        description.innerHTML = albumDescription.innerHTML;
+        description.style.display = "block";
+    }
+}
