@@ -13,28 +13,33 @@
     <div class="main-container">
         <div class="sidebar">
             <header>
-                <h2>Katia Fernandez</h2>
+                <h2>Photographer's Name/Logo</h2>
             </header>
             <ul>
-                <li><h4>Acerca de mi</h4></li>
+                <li><h4>About me</h4></li>
                 <li class="dropdown">
-                    <h4 id="dropdown-btn">Contacto</h4>
+                    <h4 id="dropdown-btn">Contact</h4>
                     <ul id="contacto-menu" class="dropdown-content">
-                        <li><a href="mailto:katiaphoto@mail.com">E: katiaphoto@mail.com</a></li>
-                        <li><p>T: 664-123-4567</p></li>
+                        <li><a href="mailto:photography@mail.com">E: photography@mail.com</a></li>
+                        <li><p>T: 619-123-4567</p></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <button class="dropdown-btn">Albums</button>
                     <ul id="albums-menu" class="dropdown-content">
-                        <li onclick="toggleDescription(event, 'album1'), scrollToDescription('description')"><a href="#">Urbano</a></li>
-                        <li onclick="toggleDescription(event, 'album2'), scrollToDescription('description')"><a href="#">Bodas</a></li>
-                        <li onclick="toggleDescription(event, 'album3'), scrollToDescription('description')"><a href="#">Familiar</a></li>
-                        <li onclick="toggleDescription(event, 'album4'), scrollToDescription('description')"><a href="#" >Parejas</a></li>
-                        <li onclick="toggleDescription(event, 'album5'), scrollToDescription('description')"><a href="#">Embarazos</a></li>
+                        <li onclick="toggleDescription(event, 'album1'), scrollToDescription('description')"><a href="#">Urban</a></li>
+                        <li onclick="toggleDescription(event, 'album2'), scrollToDescription('description')"><a href="#">Weddings</a></li>
+                        <li onclick="toggleDescription(event, 'album3'), scrollToDescription('description')"><a href="#">Family</a></li>
+                        <li onclick="toggleDescription(event, 'album4'), scrollToDescription('description')"><a href="#">Couples</a></li>
+                        <li onclick="toggleDescription(event, 'album5'), scrollToDescription('description')"><a href="#">Pregnancy</a></li>
                     </ul>
                 </li>
             </ul>
+            <div class="bottom-link-container">
+                <a href="#"><img src="static/img/Facebook_badge.png" alt="Facebook_logo"></a>
+                <a href="#"><img src="static/img/Instagram_badge.png" alt="Instagram_logo"></a>
+                <a href="#"><img src="static/img/WhatsApp_badge.png" alt="WhatsApp_logo"></a>
+            </div>
         </div>
         <div class="content-container">
             <div class="slideshow-container">
@@ -54,82 +59,105 @@
                 <div class="album-container">
                     <div class="album-cover">
                         <a href="#" onclick="toggleDescription(event, 'album1'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/People/pexels-rob-gamble-2859371.jpg" alt="Urbano_photo"></a>
-                        <a href=""><h4>Urbano</h4></a>
+                        <a href=""><h4>Urban</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
                         <a href="#" onclick="toggleDescription(event, 'album2'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Wedding/pexels-pixabay-157757.jpg" alt="Wedding_photo"></a>
-                        <a href=""><h4>Bodas</h4></a>
+                        <a href=""><h4>Weddings</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
                         <a href="#" onclick="toggleDescription(event, 'album3'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Family/pexels-harrison-haines-3204088.jpg" alt="Family_photo"></a>
-                        <a href=""><h4>Familiar</h4></a>
+                        <a href=""><h4>Family</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
                         <a href="#" onclick="toggleDescription(event, 'album4'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Partner/pexels-jonathan-borba-10258520.jpg" alt="Pareja_photo"></a>
-                        <a href=""><h4>Pareja</h4></a>
+                        <a href=""><h4>Couple</h4></a>
                     </div>
                 </div>
                 <div class="album-container">
                     <div class="album-cover">
                         <a href="#" onclick="toggleDescription(event, 'album5'), scrollToDescription('description')"><img src="https://storage.googleapis.com/photography-portfolio-jc/Photography_portfolio/Pregnancy/pexels-bruno-abdiel-19738359.jpg" alt="Embarazo_photo"></a>
-                        <a href=""><h4>Embarazo</h4></a>
+                        <a href=""><h4>Pregnancy</h4></a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="static/script.js"></script>
     <div id="description_album1" class="description">
-        <h2>Urbano</h2>
+        <h2>Urban</h2>
         <p>
-        Descubre la energía vibrante y el encanto ecléctico de la vida urbana con nuestras sesiones de 
-        fotografía urbana. Ya sea frente a las calles de la ciudad, murales coloridos o maravillas 
-        arquitectónicas, buscamos capturar el espíritu dinámico y el carácter único de los entornos urbanos. 
-        Nuestro objetivo es crear imágenes visualmente impactantes que celebren la diversidad, la creatividad 
-        y el ritmo de la vida en la ciudad.
+            Discover the vibrant energy and eclectic charm of urban life with our urban photography sessions. 
+            Whether against the backdrop of city streets, colorful murals, or architectural marvels, we seek to 
+            capture the dynamic spirit and unique character of urban environments. Our goal is to create 
+            visually striking images that celebrate the diversity, creativity, and rhythm of city living.
         </p>
+        <section>
+            <div class="horizontal-scroll-container" id="photo-container-People">
+                <!-- Photos from People will be dynamically inserted here -->
+            </div>
+        </section>
     </div>
     <div id="description_album2" class="description">
-        <h2>Bodas</h2>
+        <h2>Weddings</h2>
         <p>
-        Captura la elegancia atemporal y los momentos emotivos de tu día especial con nuestros servicios de 
-        fotografía de bodas. Desde el tierno intercambio de votos hasta la alegre celebración con seres 
-        queridos, documentamos artísticamente cada detalle, asegurando que tu historia de amor quede bellamente 
-        preservada para las generaciones venideras.
+            Capture the timeless elegance and heartfelt moments of your special day with our wedding photography 
+            services. From the tender exchange of vows to the joyous celebration with loved ones, we artfully 
+            document every detail, ensuring your love story is beautifully preserved for generations to come.
         </p>
+        <section>
+            <div class="horizontal-scroll-container" id="photo-container-Wedding">
+                <!-- Photos from Wedding will be dynamically inserted here -->
+            </div>
+        </section>
     </div>
     <div id="description_album3" class="description">
-        <h2>Familiar</h2>
+        <h2>Family</h2>
         <p>
-        Aprecia el amor y la risa de tu familia con nuestras sesiones de fotografía familiar. Creemos en 
-        capturar los lazos genuinos y los momentos felices compartidos entre los miembros de la familia, desde 
-        abrazos juguetones hasta risas espontáneas. Nuestro objetivo es crear imágenes atemporales que evocan 
-        calidez, felicidad y el inconfundible sentido de pertenencia que proviene de estar juntos.
+            Cherish the love and laughter of your family with our family photography sessions. We believe in 
+            capturing the genuine bonds and joyful moments shared between family members, from playful embraces 
+            to candid laughter. Our aim is to create timeless images that evoke warmth, happiness, and the 
+            unmistakable sense of belonging that comes from being together.
         </p>
+        <section>
+            <div class="horizontal-scroll-container" id="photo-container-Family">
+                <!-- Photos from Family will be dynamically inserted here -->
+            </div>
+        </section>
     </div>
     <div id="description_album4" class="description">
-        <h2>Parejas</h2>
+        <h2>Couples</h2>
         <p>
-        Celebra tu vínculo único y conexión con nuestras sesiones de fotografía de parejas. Ya sea que estén 
-        marcando un aniversario importante o simplemente quieran capturar la magia de su relación, nuestro 
-        objetivo es crear imágenes impresionantes que reflejen auténticamente su historia de amor, mostrando 
-        la risa, la ternura y las aventuras compartidas que hacen que su relación sea realmente especial.
+            Celebrate your unique bond and connection with our couples photography sessions. Whether you're 
+            marking a milestone anniversary or simply want to capture the magic of your relationship, our goal 
+            is to create stunning images that authentically reflect your love story, showcasing the laughter, 
+            tenderness, and shared adventures that make your partnership truly special.
         </p>
+        <section>
+            <div class="horizontal-scroll-container" id="photo-container-Partner">
+                <!-- Photos from Partner will be dynamically inserted here -->
+            </div>
+        </section>
     </div>
     <div id="description_album5" class="description">
-        <h2>Embarazos</h2>
+        <h2>Pregnancy</h2>
         <p>
-        Abraza la belleza y la maravilla de la maternidad con nuestras sesiones de fotografía de embarazo. 
-        Desde retratos de maternidad radiantes hasta momentos íntimos compartidos entre futuros padres, 
-        buscamos capturar la emoción, la anticipación y el amor incondicional que acompañan este viaje 
-        transformador. Permítenos preservar los preciosos recuerdos de este momento tan especial en tu vida.
+            Embrace the beauty and wonder of motherhood with our pregnancy photography sessions. From glowing 
+            maternity portraits to intimate moments shared between expectant parents, we aim to capture the 
+            excitement, anticipation, and unconditional love that accompany this transformative journey. Let us 
+            preserve the precious memories of this remarkable time in your life.
         </p>
+        <section>
+            <div class="horizontal-scroll-container" id="photo-container-Pregnancy">
+                <!-- Photos from Pregnancy will be dynamically inserted here -->
+            </div>
+        </section>
     </div>
+    <script src="static/script.js"></script>
 </body>
 </html>

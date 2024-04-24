@@ -57,3 +57,52 @@ function scrollToDescription(sectionId) {
         behavior: 'smooth' // Smooth scrolling behavior
     });
 }
+
+
+/* Pop-up Slideshow */
+// Function to fetch and display images for a specific folder
+const firstPhotoSection = document.querySelector('section');
+
+function fetchAndDisplayImages(folderName, containerId) {
+    const photoContainer = document.getElementById(containerId);
+
+    fetch(`https://www.googleapis.com/storage/v1/b/photography-portfolio-jc/o?prefix=Photography_portfolio/${folderName}`)
+    .then(response => response.json())
+    .then(data => {
+        if (data.items) {
+            // Process data and extract photo URLs
+            const photoUrls = data.items.map(item => item.mediaLink);
+
+            // Insert photos into HTML
+            photoUrls.forEach(photoUrl => {
+                const img = document.createElement('img');
+                img.src = photoUrl;
+                photoContainer.appendChild(img);
+            });
+        } else {
+            console.warn(`No items found in the response for ${folderName}`);
+        }
+    })
+    .catch(error => {
+        console.error(`Error fetching photos for ${folderName}:`, error);
+    });
+}
+// Fetch and display images for each section
+fetchAndDisplayImages('Family/', 'photo-container-Family');
+fetchAndDisplayImages('Wedding/', 'photo-container-Wedding');
+fetchAndDisplayImages('Pregnancy/', 'photo-container-Pregnancy');
+fetchAndDisplayImages('Partner/', 'photo-container-Partner');
+fetchAndDisplayImages('People/', 'photo-container-People');
+
+// Loop through each section and add event listeners
+sections.forEach(section => {
+    section.style.opacity = 0.7; // Set default opacity to 0.8
+    section.addEventListener('mouseenter', handleMouseEnter);
+    section.addEventListener('mouseleave', handleMouseLeave);
+});
+
+// Function to smoothly scroll to the selected category
+function scrollToCategory(categoryId) {
+    const categoryElement = document.getElementById(categoryId);
+    categoryElement.scrollIntoView({ behavior: 'smooth' });
+}

@@ -51,6 +51,7 @@
     border-bottom: .5px solid rgb(201, 169, 109);
 }
 
+
 .sidebar h4 {
     padding: 10px 20px;
     transition: transform 0.3s ease;
@@ -63,9 +64,8 @@
     padding: 20px; /* Example padding */
 }
 
-header {
-    display: flex;
-    justify-content: center;
+header h2{
+    text-align: center;
     width: 100%;
     margin: 50px 0px 100px;
 }
@@ -88,13 +88,14 @@ header {
 
 .dropdown-content {
     display: none;
-    background: linear-gradient(to right, rgb(255, 242, 221), rgb(255, 249, 238));
+    background: linear-gradient(to right, rgb(255, 237, 209), rgb(253, 239, 216), rgb(255, 249, 238));
 }
 
 .dropdown-content li {
     display: block;
     font-size: 18px;
-    padding: 20px;
+    padding: 10px 0px 10px 30px;
+    border: .8px solid rgb(164, 164, 164);
 }
 
 .dropdown-content a, .dropdown-content p {
@@ -104,11 +105,6 @@ header {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-#albums-menu li {
-    padding-left: 30px;
-    border: .8px solid rgb(164, 164, 164);
 }
 
 /* CONTENT ......................................... */
@@ -223,4 +219,51 @@ padding: 30px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
+    box-shadow: 3px 3px 5px 4px rgb(210, 210, 210);
+}
+
+/* POP-UP - SLIDESHOW............................... */
+.horizontal-scroll-container img {
+    flex: 0 0 auto;
+    margin-right: 10px; /* Adjust spacing between photos */
+}
+
+.horizontal-scroll-container {
+    width: 100%; /* Full width of the viewport */
+    white-space: nowrap; /* Prevent images from wrapping */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+    display: flex; /* Use flexbox layout for horizontal alignment */
+    scroll-behavior: smooth; /* Smooth scrolling behavior */
+}
+
+.horizontal-scroll-container img {
+    max-height: 80vh; /* Maximum height of the viewport for images */
+    max-width: 100%; /* Allow images to retain their original aspect ratio */
+    margin-right: 10px; /* Add space between images */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    width: 0;
+}
+
+section {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    margin: 10px -10px;
+}
+
+/* BOTTOM SIDEBAR BADGES */
+.bottom-link-container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: end;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 5px;
+}
+
+.bottom-link-container img {
+    width: 60px;
+    height: auto;
 }
