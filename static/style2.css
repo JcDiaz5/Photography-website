@@ -266,4 +266,5 @@ section {
 .bottom-link-container img {
     width: 60px;
     height: auto;
+    opacity: .7;
 }
