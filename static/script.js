@@ -22,12 +22,12 @@ function changeSlide(n) {
 // Function to automate the slideshow
 function startSlideshow() {
     setInterval(() => {
-        changeSlide(1); // Move to the next slide every 3.5 seconds
+        changeSlide(1);
     }, 4000);
 }
 
-showSlide(); // Show the initial slide
-startSlideshow(); // Start the slideshow
+showSlide();
+startSlideshow();
 
 
 // Function to toggle the visibility of the description div for each item
@@ -59,7 +59,6 @@ function scrollToDescription(sectionId) {
 }
 
 
-/* Pop-up Slideshow */
 // Function to fetch and display images for a specific folder
 const firstPhotoSection = document.querySelector('section');
 

@@ -2,178 +2,273 @@
     padding: 0;
     margin: 0;
     font-family: "Kalam", cursive;
-    font-weight: 400;
+    font-weight: 200;
     font-style: normal;
-    font-size: 20px;
     color: rgb(36, 36, 36);
 }
 
-
 .main-container {
     display: flex;
-    flex-direction: column;
-    background-image: url('/static/img/Background.png'); /* Replace 'background-image.jpg' with the path to your image */
-    background-size: cover; /* Cover the entire background */
-    background-position: center; /* Center the background image */
-    background-repeat: no-repeat; /* Prevent background image from repeating */
-    background-attachment: fixed; /* Keep the background fixed when scrolling */
-    gap: 50px;
 }
 
-.main-container ul {
+/* SIDEBAR .................................................... */
+.sidebar {
+    width: 230px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:oldlace;
+    font-size: 20px;
+    box-shadow: 0px 2px 6px 2px rgb(221, 203, 188);
+}
+
+.sidebar ul {
     list-style: none;
-    gap: 100px;
-    margin-top: 25px;
+    transition: transform 0.3s ease;
+    width: 100%;
 }
 
-.main-container a {
-    text-decoration: none;
-    font-size: 23px;
-    color:rgb(88, 88, 88);
+.sidebar li:hover, .dropdown-btn:hover {
+    background-color: rgb(253, 248, 238);
 }
 
-.main-container li {
-    transition: transform 0.3s ease; /* Smoothing tansition effect */
+.sidebar h4:hover, h3:hover, .dropdown-btn:hover {
+    transform: scale(1.05);
 }
 
-.main-container li:hover {
-    transform: scale(1.08); /* Scales the button when hovered over */
+.sidebar li {
+    width: 100%;
+    border-top: .5px solid rgb(201, 169, 109);
+}
+.sidebar li:last-child {
+    border-bottom: .5px solid rgb(201, 169, 109);
 }
 
-.visible {
-    display: block;
-    opacity: 1;
+.sidebar h4 {
+    padding: 10px 20px;
+    transition: transform 0.3s ease;
+    color: rgb(76, 64, 48);
 }
 
-.about-content {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    width: 80%;
-    margin: 0px auto;
-    transition: max-height 2.0s ease, opacity 3s ease; /* Smooth transition for height change */
+.content {
+    flex: 1;
+    margin-left: 250px;
+    padding: 20px;
 }
 
-.about-content.visible {
-    max-height: 200px; /* Adjust the maximum height as needed */
-    opacity: 1;
+header h2{
+    text-align: center;
+    width: 100%;
+    margin: 50px 0px 100px;
 }
 
-.about-name {
-    color:rgb(122, 97, 118);
-    font-size: 22px;
-}
-
-.horizontal-scroll-container img {
-flex: 0 0 auto;
-margin-right: 10px; /* Adjust spacing between photos */
-}
-
-.horizontal-scroll-container {
-    width: 100vw; /* Full width of the viewport */
-    white-space: nowrap; /* Prevent images from wrapping */
-    overflow-x: auto; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Hide vertical scrollbar */
-    display: flex; /* Use flexbox layout for horizontal alignment */
-    scroll-behavior: smooth; /* Smooth scrolling behavior */
-}
-
-.horizontal-scroll-container img {
-    max-height: 80vh; /* Maximum height of the viewport for images */
-    max-width: none; /* Allow images to retain their original aspect ratio */
-    margin-right: 10px; /* Add space between images */
-}
-
-.horizontal-scroll-container::-webkit-scrollbar {
-    width: 0;  /* Make scrollbar width 0 */
-}
-
-section {
-    opacity: 0.8;
-    transition: opacity 0.6s ease; /* Add transition for opacity change */
-}
-
-/* Add CSS for dropdown menu */
 .dropdown {
     position: relative;
     display: inline-block;
 }
 
-.dropdown-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
+.dropdown-btn {
+    width: 100%;
+    color: rgb(76, 64, 48);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    text-align: start;
+    font-size: 20px;
+    padding: 10px 20px;
 }
 
 .dropdown-content {
     display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 500px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    padding: 12px 16px;
-    z-index: 1;
-    left: calc(50% - 250px); /* Adjust left position to center the menu */
+    background: linear-gradient(to right, rgb(255, 237, 209), rgb(253, 239, 216), rgb(255, 249, 238));
+}
+
+.dropdown-content li {
+    display: block;
+    font-size: 18px;
+    padding: 10px 30px;
+    border: .8px solid rgb(229, 209, 183);
+}
+
+.dropdown-content li:last-child {
+    border-bottom: .8px solid rgb(229, 209, 183);
+}
+
+
+.dropdown-content a, .dropdown-content p {
+    text-decoration: none;
+    color: rgb(76, 64, 48);
 }
 
 .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* CONTENT ......................................... */
+
+.content-container {
+    width: 100%;
+    padding: 0px 20px 20px;
+    margin-left: 230px;
+    background-color: #f6f6f6;
+    box-shadow: 1px 1px 2px 2px rgb(230, 229, 229);
+}
+
+/* SLIDESHOW ........................................ */
+.slideshow-container {
     display: flex;
-    justify-content: space-between;
-    background-color: rgb(253, 253, 250);
-    padding: 20px;
-    width: 100px;
-    box-shadow: 2px 2px 3px 2px rgb(233, 233, 233);
-    border-radius: 20px;
-    border: none;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-bottom: 1px solid rgb(232, 232, 232);
 }
 
-/* Style the dropdown button */
-.dropdown-button {
-    background-color: transparent;
-    color: rgb(122, 97, 118);
-    margin-top: 5px;
-    font-size: 30px;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-}
-
-/* back to top button */
-#scrollToTopBtn {
-    margin: 0px auto;
-    width: 150px;
-    padding: 5px;
-    background: rgb(254, 250, 245);
-    border: none;
-    box-shadow: 2px 2px 3px 2px rgb(227, 227, 227);
-    border-radius: 10px;
-}
-
-.bottom-nav {
-    background-color: rgb(189, 174, 154);
-    height: 100px;
+.slides {
+    width: auto;
+    height: 100%;
+    max-width: 500px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+
 }
 
-.bottom-nav p{
-    font-size: 22px;
-    margin-left: 40px;
-    color:rgb(255, 255, 255);
+.slides img {
+    width: auto;
+    height: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    opacity: 0;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 10px rgb(203, 203, 203);
+    transition: opacity 1s ease;
+}
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    padding: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.148);
+    border-radius: 50%;
 }
 
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+/* ALBUMS .......................................... */
+.album-section {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.album-container {
+width: 250px;
+height: 350px;
+margin: 70px 20px;
+box-shadow: 0px 2px 5px 3px rgb(226, 225, 225);
+border-radius: 15px;
+padding: 30px;
+}
+
+.album-cover {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.album-cover a{
+    text-decoration: none;
+    font-size: 25px;
+
+}
+.album-cover img {
+    width: 100%;
+    height: auto;
+    max-height: 310px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 6px 4px rgb(231, 230, 230);
+    filter: saturate(20%);
+    transition: filter .5s ease;
+}
+
+.album-cover img:hover {
+    filter: saturate(100%);
+}
+
+/* POP-UP ...................................... */
+.description {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 3px 3px 5px 4px rgb(210, 210, 210);
+}
+
+/* POP-UP - SLIDESHOW............................... */
+.horizontal-scroll-container img {
+    flex: 0 0 auto;
+    margin-right: 10px;
+}
+
+.horizontal-scroll-container {
+    width: 100%;
+    white-space: nowrap; 
+    overflow-x: auto; 
+    overflow-y: hidden;
+    display: flex;
+    scroll-behavior: smooth;
+}
+
+.horizontal-scroll-container img {
+    max-height: 80vh;
+    max-width: 100%; 
+    margin-right: 10px;
+
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    width: 0;
+}
+
+section {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+    margin: 10px -10px;
+}
+
+/* BOTTOM SIDEBAR BADGES */
 .bottom-link-container{
     display: flex;
-    justify-content: end;
-    align-items: center;
-    margin-right: 50px;
+    justify-content: space-evenly;
+    align-items: end;
+    width: 100%;
     height: 100%;
-    gap: 50px;
+    margin-bottom: 5px;
 }
 
 .bottom-link-container img {
     width: 60px;
     height: auto;
+    opacity: .7;
 }
