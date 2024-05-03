@@ -29,6 +29,20 @@ function startSlideshow() {
 showSlide();
 startSlideshow();
 
+// Function to toggle "about me" visibility
+function toggleAboutMe() {
+    var aboutMeSection = document.getElementById("about-me");
+    if (aboutMeSection.style.display === "none") {
+        aboutMeSection.style.display = "block";
+    } else {
+        aboutMeSection.style.display = "none";
+    }
+}
+
+function hideAboutMe() {
+    var aboutMeSection = document.getElementById("about-me");
+    aboutMeSection.style.display = "none";
+}
 
 // Function to toggle the visibility of the description div for each item
 function toggleDescription(event, album) {
